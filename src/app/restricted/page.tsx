@@ -11,6 +11,10 @@ import {
   MapPin,
   Clock,
   Users,
+  Contact2,
+  PhoneCall,
+  Send,
+  MessageCircle,
 } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
@@ -208,18 +212,28 @@ export default function RestrictedPage() {
                     whileHover={{ scale: 1.02 }}
                     className="flex items-center gap-2 bg-blue-500/10 p-2 rounded-lg border border-white/10"
                   >
-                    <Shield className="w-4 h-4 text-blue-300" />
+                    <Send className="w-4 h-4 text-blue-300" />
                     <a href="mailto:library@university.edu" className="underline">
-                      kdl.ui2025@gmail.com
+                      kdl.ui@gmail.com
                     </a>
                   </motion.div>
                   <motion.div
                     whileHover={{ scale: 1.02 }}
                     className="flex items-center gap-2 bg-blue-500/10 p-2 rounded-lg border border-white/10"
                   >
-                    <Wifi className="w-4 h-4 text-blue-300" />
+                    <PhoneCall className="w-4 h-4 text-blue-300" />
                     <a href="tel:+1234567890" className="underline">
                       +234 903 2193 358
+                    </a>
+                  </motion.div>
+
+                   <motion.div
+                    whileHover={{ scale: 1.02 }}
+                    className="flex items-center gap-2 bg-blue-500/10 p-2 rounded-lg border border-white/10"
+                  >
+                    <MessageCircle className="w-4 h-4 text-blue-300" />
+                    <a href="tel:+1234567890" className="underline">
+                      +234 815 0607 963
                     </a>
                   </motion.div>
                 </motion.div>
