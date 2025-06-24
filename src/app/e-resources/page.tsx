@@ -404,7 +404,7 @@ export default function EResourcesPage() {
             />
 
             {/* Header */}
-                <motion.header
+            <motion.header
                 className="bg-white/80 backdrop-blur-sm border-b border-gray-200 sticky top-0 z-40"
                 initial={{ y: -100 }}
                 animate={{ y: 0 }}
@@ -412,10 +412,20 @@ export default function EResourcesPage() {
             >
                 <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
                     <Link href="/">
-                        <Button variant="ghost" className="flex items-center gap-2">
-                            <ArrowLeft className="h-4 w-4" />
-                            <span>Back to Home</span>
-                        </Button>
+                        {/* Logo */}
+                        <Link href="/" className="flex items-center space-x-2">
+                            <motion.div
+                                className="flex items-center cursor-pointer"
+                                whileHover={{ scale: 1.05 }}
+                                transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                            >
+                                <div className="flex items-center space-x-1">
+                                    <img src="/ui_logo.png" alt="Logo 1" className="w-8 h-8 object-contain" />
+                                    <img src="/kdl_logo.png" alt="Logo 2" className="w-6 h-6 object-contain" />
+                                </div>
+                                <span className="ml-2 text-lg sm:text-xl font-bold text-gray-900">Kenneth Dike Library</span>
+                            </motion.div>
+                        </Link>
                     </Link>
                     <div className="text-sm text-gray-500 italic">Kenneth Dike Library E-Resources</div>
                 </div>
@@ -716,6 +726,6 @@ function DatabaseCard({ database, index }: { database: any; index: number }) {
             <div className="absolute inset-0 rounded-2xl border-2 border-transparent group-hover:border-green-200 transition-colors duration-300 pointer-events-none"></div>
         </motion.div>
 
-        
+
     )
 }
