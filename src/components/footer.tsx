@@ -16,7 +16,7 @@ export default function Footer() {
           transition={{ duration: 0.6, delay: 0.4 }}
           viewport={{ once: true }}
         >
-          <p className="text-gray-400">© {currentYear} Kenneth Dike Library. All rights reserved.</p>
+          <p className="text-gray-400">© {currentYear} Kenneth Dike Library E-resources. University of Ibadan. All rights reserved.</p>
         </motion.div>
     
    </footer>
