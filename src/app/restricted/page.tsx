@@ -2,13 +2,23 @@
 
 import { useEffect, useState } from "react"
 import { motion } from "framer-motion"
-import { Shield, Lock, AlertTriangle, ArrowLeft, Wifi, MapPin, Clock, Users } from "lucide-react"
+import {
+  Shield,
+  Lock,
+  AlertTriangle,
+  ArrowLeft,
+  Wifi,
+  MapPin,
+  Clock,
+  Users,
+} from "lucide-react"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 
 export default function RestrictedPage() {
   const [mounted, setMounted] = useState(false)
   const [currentTime, setCurrentTime] = useState(new Date())
+  const [showContacts, setShowContacts] = useState(false)
 
   useEffect(() => {
     setMounted(true)
@@ -114,11 +124,7 @@ export default function RestrictedPage() {
                 <motion.div
                   key={index}
                   className="absolute w-6 h-6 sm:w-8 sm:h-8 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center border border-white/20"
-                  style={{
-                    top: "50%",
-                    left: "50%",
-                    transformOrigin: "0 0",
-                  }}
+                  style={{ top: "50%", left: "50%", transformOrigin: "0 0" }}
                   animate={{ rotate: 360 }}
                   transition={{ duration: 8 + index * 2, repeat: Infinity, ease: "linear" }}
                   initial={{ x: 60 + index * 20, y: -12 }}
@@ -168,6 +174,7 @@ export default function RestrictedPage() {
               <h3 className="text-white font-semibold mb-2">Location Required</h3>
               <p className="text-gray-400 text-sm">Must be present in the Library</p>
             </motion.div>
+
             {/* Card 2 */}
             <motion.div
               className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 hover:bg-white/10 transition-all"
@@ -175,16 +182,48 @@ export default function RestrictedPage() {
             >
               <Clock className="h-8 w-8 text-orange-400 mx-auto mb-4" />
               <h3 className="text-white font-semibold mb-2">Library Hours</h3>
-              <p className="text-gray-400 text-sm">{currentTime.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" })}</p>
+              <p className="text-gray-400 text-sm">
+                {currentTime.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" })}
+              </p>
             </motion.div>
-            {/* Card 3 */}
+
+            {/* Card 3 - Contact */}
             <motion.div
-              className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 hover:bg-white/10 transition-all"
+              onClick={() => setShowContacts(!showContacts)}
+              className="cursor-pointer bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 hover:bg-white/10 transition-all relative"
               whileHover={{ scale: 1.05, y: -5 }}
             >
               <Users className="h-8 w-8 text-blue-400 mx-auto mb-4" />
               <h3 className="text-white font-semibold mb-2">Need Help?</h3>
               <p className="text-gray-400 text-sm">Contact Library staff</p>
+
+              {showContacts && (
+                <motion.div
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.3 }}
+                  className="mt-4 space-y-2 text-sm text-white"
+                >
+                  <motion.div
+                    whileHover={{ scale: 1.02 }}
+                    className="flex items-center gap-2 bg-blue-500/10 p-2 rounded-lg border border-white/10"
+                  >
+                    <Shield className="w-4 h-4 text-blue-300" />
+                    <a href="mailto:library@university.edu" className="underline">
+                      kdl.ui2025@gmail.com
+                    </a>
+                  </motion.div>
+                  <motion.div
+                    whileHover={{ scale: 1.02 }}
+                    className="flex items-center gap-2 bg-blue-500/10 p-2 rounded-lg border border-white/10"
+                  >
+                    <Wifi className="w-4 h-4 text-blue-300" />
+                    <a href="tel:+1234567890" className="underline">
+                      +234 903 2193 358
+                    </a>
+                  </motion.div>
+                </motion.div>
+              )}
             </motion.div>
           </motion.div>
 
@@ -206,7 +245,11 @@ export default function RestrictedPage() {
           </div>
 
           {/* Warning */}
-          <motion.div className="mt-12" animate={{ opacity: [0.5, 1, 0.5] }} transition={{ duration: 2, repeat: Infinity }}>
+          <motion.div
+            className="mt-12"
+            animate={{ opacity: [0.5, 1, 0.5] }}
+            transition={{ duration: 2, repeat: Infinity }}
+          >
             <p className="text-gray-500 text-sm flex items-center justify-center gap-2">
               <AlertTriangle className="h-4 w-4" />
               This restriction is in place to comply with licensing agreements
