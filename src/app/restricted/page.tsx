@@ -65,8 +65,8 @@ export default function RestrictedPage() {
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
       >
-        <Link href="/">
-          <Button variant="ghost" className="text-white hover:bg-white/10 border border-white/20">
+        <Link href="/e-resources">
+          <Button variant="ghost" className="text-white hover:bg-white/10 border border-white/20 cursor-pointer">
             <ArrowLeft className="h-4 w-4 mr-2" />
             Back to Home
           </Button>
@@ -136,19 +136,19 @@ export default function RestrictedPage() {
             transition={{ duration: 0.8, delay: 0.6 }}
           >
             <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-white mb-6">
-              Access{" "}
+              Visit the{" "}
               <motion.span
                 className="text-transparent bg-clip-text bg-gradient-to-r from-red-400 via-orange-400 to-red-400 inline-block"
                 animate={{ backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"] }}
                 transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
                 style={{ backgroundSize: "200% 200%" }}
               >
-                Restricted
+                Library
               </motion.span>
             </h1>
             <p className="text-lg sm:text-xl md:text-2xl text-gray-300 mb-12 font-light">
               This resource is only accessible within the{" "}
-              <span className="text-white font-semibold">Law Library</span>
+              <span className="text-white font-semibold">Library</span>
             </p>
           </motion.div>
 
@@ -166,7 +166,7 @@ export default function RestrictedPage() {
             >
               <MapPin className="h-8 w-8 text-red-400 mx-auto mb-4" />
               <h3 className="text-white font-semibold mb-2">Location Required</h3>
-              <p className="text-gray-400 text-sm">Must be present in the Law Library</p>
+              <p className="text-gray-400 text-sm">Must be present in the Library</p>
             </motion.div>
             {/* Card 2 */}
             <motion.div
@@ -184,7 +184,7 @@ export default function RestrictedPage() {
             >
               <Users className="h-8 w-8 text-blue-400 mx-auto mb-4" />
               <h3 className="text-white font-semibold mb-2">Need Help?</h3>
-              <p className="text-gray-400 text-sm">Contact Law Library staff</p>
+              <p className="text-gray-400 text-sm">Contact Library staff</p>
             </motion.div>
           </motion.div>
 
@@ -193,7 +193,7 @@ export default function RestrictedPage() {
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
               <Button size="lg" className="bg-gradient-to-r from-red-500 to-red-600 text-white px-8 py-4 rounded-2xl shadow-lg">
                 <MapPin className="mr-2 h-5 w-5" />
-                Find Law Library
+                Find the Library
               </Button>
             </motion.div>
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
