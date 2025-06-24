@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import Link from "next/link"
 
+
 const databases = [
     {
         id: 1,
@@ -25,7 +26,7 @@ const databases = [
     {
         id: 2,
         name: "Science.gov",
-        category: "Multidisciplinary Science",
+        category: "Multidisciplinary",
         description:
             "A US government gateway offering one-stop access to 60+ scientific databases and over 2,200 portals across 13 federal science agencies, covering 200 million+ pages of research and technical information.",
         features: [
@@ -62,7 +63,7 @@ const databases = [
         logo: "ERIC.png",
         url: "https://eric.ed.gov/",
         color: "from-indigo-500 to-indigo-600",
-        stats: { articles: "1.6M+", journals: "500+", reports: "300,000+" },
+        stats: { articles: "1.6M+", journals: "500+", reports: "300k+" },
     },
 
     {
@@ -90,7 +91,7 @@ const databases = [
         logo: "arX.png",
         url: "https://arxiv.org",
         color: "from-gray-700 to-gray-900",
-        stats: { articles: "2.3M+", categories: "8+", submissionsPerMonth: "15,000+" },
+        stats: { articles: "2.3M+", categories: "8+", subPerMonth: "15,000+" },
     },
 
     {
@@ -117,7 +118,7 @@ const databases = [
         logo: "lawP.png",
         url: "/restricted",
         color: "from-indigo-700 to-indigo-800",
-        stats: { cases: "100,000+", laws: "1,000+", courts: "All Nigerian courts" },
+        stats: { cases: "100k+", laws: "1,000+", courts: "Nigerian courts" },
     },
 
     {
@@ -141,7 +142,7 @@ const databases = [
             "Union catalog of millions of records representing open access resources worldwide, maintained by OCLC.",
         features: ["Open access", "Theses & dissertations", "Archival documents", "Multilingual records"],
         subjects: ["Arts", "Humanities", "Sciences", "Engineering", "Social Sciences"],
-        logo: "OCLCpng",
+        logo: "OCLC.png",
         url: "https://www.oclc.org/en/oaister.html",
         color: "from-blue-600 to-blue-800",
         stats: { records: "50M+", institutions: "1,500+", countries: "100+" },
@@ -157,7 +158,7 @@ const databases = [
         logo: "PMC.png",
         url: "https://europepmc.org",
         color: "from-green-500 to-green-700",
-        stats: { articles: "42M+", grants: "800,000+", preprints: "500,000+" },
+        stats: { articles: "42M+", grants: "800k+", preprints: "500k+" },
     },
     {
         id: 11,
@@ -235,7 +236,7 @@ const databases = [
         logo: "project.png",
         url: "https://www.gutenberg.org",
         color: "from-yellow-700 to-orange-700",
-        stats: { books: "60,000+", languages: "60+", formats: "HTML, EPUB, Kindle, Plain Text" }
+        stats: { books: "60,000+", languages: "60+", formats: "Kindle, Plain Text" }
     },
     {
         id: 17,
@@ -261,7 +262,7 @@ const databases = [
         logo: "Bio.png",
         url: "https://www.biorxiv.org",
         color: "from-green-600 to-green-800",
-        stats: { preprints: "100,000+", subjects: "30+", downloads: "10M+/month" }
+        stats: { preprints: "100,000+", subjects: "30+", downloads: "10M+" }
     },
     {
         id: 19,
@@ -297,7 +298,7 @@ const databases = [
             "Provides access to five research programs (HINARI, AGORA, OARE, ARDI, and GOALI) supporting research in health, agriculture, environmental science, development, innovation, and law in developing countries.",
         features: ["Access to peer-reviewed journals", "Global research collaboration", "Thematic portals", "Free/low-cost access for eligible institutions"],
         subjects: ["Health", "Agriculture", "Environment", "Innovation", "Law"],
-        logo: "Research4Life.png",
+        logo: "research.png",
         url: "/restricted",
         color: "from-green-600 to-green-700",
         stats: { programs: 5, institutions: "10,000+", countries: "120+" }
@@ -310,7 +311,7 @@ const databases = [
             "African Journals Online (AJOL) hosts peer-reviewed academic journals from Africa, focused on African research across a wide range of disciplines.",
         features: ["Open access journals", "African-focused content", "Health and social sciences", "Search and browse tools"],
         subjects: ["Health", "Agriculture", "Social Sciences", "African Studies"],
-        logo: "Ajol.png",
+        logo: "AJOL.png",
         url: "/restricted",
         color: "from-yellow-600 to-yellow-700",
         stats: { journals: "500+", countries: "30+", disciplines: "10+" }
@@ -326,7 +327,7 @@ const databases = [
         logo: "EBSCO.png",
         url: "/restricted",
         color: "from-blue-500 to-blue-600",
-        stats: { articles: "15M+", journals: "2,000+", ebooks: "300,000+" }
+        stats: { articles: "15M+", journals: "2,000+", ebooks: "300k+" }
     },
     {
         id: 24,
@@ -366,6 +367,12 @@ const categories = [
     "Social Sciences & Humanities",
     "Social Sciences",
     "Academic Publishing",
+    "History & Journalism",
+    "Geopolitics & Statistics",
+    "Economics & Business",
+    "Theses & Dissertations",
+    "Astronomy & Astrophysics",
+    "Life Sciences",
 ]
 
 export default function EResourcesPage() {
@@ -397,7 +404,7 @@ export default function EResourcesPage() {
             />
 
             {/* Header */}
-            <motion.header
+                <motion.header
                 className="bg-white/80 backdrop-blur-sm border-b border-gray-200 sticky top-0 z-40"
                 initial={{ y: -100 }}
                 animate={{ y: 0 }}
@@ -708,5 +715,7 @@ function DatabaseCard({ database, index }: { database: any; index: number }) {
             {/* Hover Effect Border */}
             <div className="absolute inset-0 rounded-2xl border-2 border-transparent group-hover:border-green-200 transition-colors duration-300 pointer-events-none"></div>
         </motion.div>
+
+        
     )
 }
