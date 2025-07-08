@@ -9,19 +9,19 @@ import Link from "next/link"
 
 
 const databases = [
-    {
-        id: 1,
-        name: "JSTOR",
-        category: "Multidisciplinary",
-        description:
-            "Digital library with thousands of academic journals, books, and primary sources across multiple disciplines including arts, sciences, and humanities.",
-        features: ["Full-text articles", "Historical archives", "Primary sources", "Citation tools"],
-        subjects: ["Arts & Humanities", "Social Sciences", "Science & Mathematics", "Business & Economics"],
-        logo: "JSTOR.png",
-        url: "/restricted",
-        color: "from-red-500 to-red-600",
-        stats: { articles: "12M+", journals: "3,000+", books: "75,000+" },
-    },
+    // {
+    //     id: 1,
+    //     name: "JSTOR",
+    //     category: "Multidisciplinary",
+    //     description:
+    //         "Digital library with thousands of academic journals, books, and primary sources across multiple disciplines including arts, sciences, and humanities.",
+    //     features: ["Full-text articles", "Historical archives", "Primary sources", "Citation tools"],
+    //     subjects: ["Arts & Humanities", "Social Sciences", "Science & Mathematics", "Business & Economics"],
+    //     logo: "JSTOR.png",
+    //     url: "/restricted",
+    //     color: "from-red-500 to-red-600",
+    //     stats: { articles: "12M+", journals: "3,000+", books: "75,000+" },
+    // },
 
     {
         id: 2,
@@ -107,19 +107,19 @@ const databases = [
         color: "from-blue-800 to-blue-900",
         stats: { datasets: "60+", countries: "200+", indicators: "1,000+" },
     },
-    {
-        id: 7,
-        name: "LawPavilion",
-        category: "Law & Legal Studies",
-        description:
-            "Nigeria's premier digital and offline legal research platform, offering access to a vast repository of case law, legislation, and legal analytics — trusted by courts, law firms, and institutions.",
-        features: ["Offline access", "Judicial precedents", "Legal analytics", "Case citation tools"],
-        subjects: ["Law", "Jurisprudence", "Constitutional Law", "Commercial Law", "Legal Practice"],
-        logo: "lawP.png",
-        url: "/restricted",
-        color: "from-indigo-700 to-indigo-800",
-        stats: { cases: "100k+", laws: "1,000+", courts: "Nigerian courts" },
-    },
+    // {
+    //     id: 7,
+    //     name: "LawPavilion",
+    //     category: "Law & Legal Studies",
+    //     description:
+    //         "Nigeria's premier digital and offline legal research platform, offering access to a vast repository of case law, legislation, and legal analytics — trusted by courts, law firms, and institutions.",
+    //     features: ["Offline access", "Judicial precedents", "Legal analytics", "Case citation tools"],
+    //     subjects: ["Law", "Jurisprudence", "Constitutional Law", "Commercial Law", "Legal Practice"],
+    //     logo: "lawP.png",
+    //     url: "/restricted",
+    //     color: "from-indigo-700 to-indigo-800",
+    //     stats: { cases: "100k+", laws: "1,000+", courts: "Nigerian courts" },
+    // },
 
     {
         id: 8,
@@ -290,45 +290,45 @@ const databases = [
         color: "from-purple-600 to-purple-800",
         stats: { books: "25,000+", publishers: "300+", languages: "15+" }
     },
-    {
-        id: 21,
-        name: "Research4Life",
-        category: "Health, Agriculture, Environment, Law",
-        description:
-            "Provides access to five research programs (HINARI, AGORA, OARE, ARDI, and GOALI) supporting research in health, agriculture, environmental science, development, innovation, and law in developing countries.",
-        features: ["Access to peer-reviewed journals", "Global research collaboration", "Thematic portals", "Free/low-cost access for eligible institutions"],
-        subjects: ["Health", "Agriculture", "Environment", "Innovation", "Law"],
-        logo: "research.png",
-        url: "/restricted",
-        color: "from-green-600 to-green-700",
-        stats: { programs: 5, institutions: "10,000+", countries: "120+" }
-    },
-    {
-        id: 22,
-        name: "Ajol",
-        category: "African Journals",
-        description:
-            "African Journals Online (AJOL) hosts peer-reviewed academic journals from Africa, focused on African research across a wide range of disciplines.",
-        features: ["Open access journals", "African-focused content", "Health and social sciences", "Search and browse tools"],
-        subjects: ["Health", "Agriculture", "Social Sciences", "African Studies"],
-        logo: "AJOL.png",
-        url: "/restricted",
-        color: "from-yellow-600 to-yellow-700",
-        stats: { journals: "500+", countries: "30+", disciplines: "10+" }
-    },
-    {
-        id: 23,
-        name: "EBSCO",
-        category: "Multidisciplinary",
-        description:
-            "A comprehensive research platform offering access to academic journals, magazines, books, and other resources across disciplines like biology, chemistry, engineering, physics, psychology, and religion.",
-        features: ["Full-text journals", "Searchable databases", "Academic ebooks", "Research alerts"],
-        subjects: ["Biology", "Chemistry", "Engineering", "Physics", "Psychology", "Religion"],
-        logo: "EBSCO.png",
-        url: "/restricted",
-        color: "from-blue-500 to-blue-600",
-        stats: { articles: "15M+", journals: "2,000+", ebooks: "300k+" }
-    },
+    // {
+    //     id: 21,
+    //     name: "Research4Life",
+    //     category: "Health, Agriculture, Environment, Law",
+    //     description:
+    //         "Provides access to five research programs (HINARI, AGORA, OARE, ARDI, and GOALI) supporting research in health, agriculture, environmental science, development, innovation, and law in developing countries.",
+    //     features: ["Access to peer-reviewed journals", "Global research collaboration", "Thematic portals", "Free/low-cost access for eligible institutions"],
+    //     subjects: ["Health", "Agriculture", "Environment", "Innovation", "Law"],
+    //     logo: "research.png",
+    //     url: "/restricted",
+    //     color: "from-green-600 to-green-700",
+    //     stats: { programs: 5, institutions: "10,000+", countries: "120+" }
+    // },
+    // {
+    //     id: 22,
+    //     name: "Ajol",
+    //     category: "African Journals",
+    //     description:
+    //         "African Journals Online (AJOL) hosts peer-reviewed academic journals from Africa, focused on African research across a wide range of disciplines.",
+    //     features: ["Open access journals", "African-focused content", "Health and social sciences", "Search and browse tools"],
+    //     subjects: ["Health", "Agriculture", "Social Sciences", "African Studies"],
+    //     logo: "AJOL.png",
+    //     url: "/restricted",
+    //     color: "from-yellow-600 to-yellow-700",
+    //     stats: { journals: "500+", countries: "30+", disciplines: "10+" }
+    // },
+    // {
+    //     id: 23,
+    //     name: "EBSCO",
+    //     category: "Multidisciplinary",
+    //     description:
+    //         "A comprehensive research platform offering access to academic journals, magazines, books, and other resources across disciplines like biology, chemistry, engineering, physics, psychology, and religion.",
+    //     features: ["Full-text journals", "Searchable databases", "Academic ebooks", "Research alerts"],
+    //     subjects: ["Biology", "Chemistry", "Engineering", "Physics", "Psychology", "Religion"],
+    //     logo: "EBSCO.png",
+    //     url: "/restricted",
+    //     color: "from-blue-500 to-blue-600",
+    //     stats: { articles: "15M+", journals: "2,000+", ebooks: "300k+" }
+    // },
     {
         id: 24,
         name: "DOAB",
